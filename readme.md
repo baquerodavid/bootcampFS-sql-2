@@ -28,7 +28,7 @@ El objetivo del ejercicio es brindarte práctica en el diseño y manipulación d
 
 ## Relación tipo 1:1
 
-### PASO 1 - Crea una tabla `usuarios` con:
+### PASO 1 - Crea una tabla `usuarios` con:
 
 - id_usuario: tipo número, que sea una clave primaria e incremente su número.
 - nombre: tipo texto y no puede dejarse el campo vacío. Máximo 50 caracteres.
@@ -61,7 +61,7 @@ INSERT INTO usuarios (nombre, apellido, email, edad) VALUES
 ('Raquel', 'Serrano', 'raquel.serrano@example.com', 32),
 ('Alberto', 'Reyes', 'alberto.reyes@example.com', 28);
 ```
-### PASO 2 - Crea una tabla de `roles`
+### PASO 2 - Crea una tabla de `roles`
 
 - id_rol: tipo número, que sea una clave primaria e incremente su número.
 - nombre_rol: tipo texto y no puede dejarse el campo vacío. Máximo 50 caracteres.
@@ -76,7 +76,7 @@ INSERT INTO roles (nombre_rol) VALUES
 ('Oro'),
 ('Platino');
 ``` 
-### PASO 3 - Crea la columna `id_rol` u la clave foránea
+### PASO 3 - Crea la columna `id_rol` u la clave foránea
 
 Añade la columna `id_rol` a usuarios. Rellena cada rol con números asociados a la tabla de `roles` 
 
@@ -90,13 +90,13 @@ La clave foránea es una herramienta clave en las bases de datos relacionales pa
 
 Si decides no utilizar una clave foránea y aún así intentas establecer una relación 1:1, estarías dejando de lado las garantías de integridad referencial y podrías enfrentar problemas de consistencia de datos. Por ejemplo, podrías tener usuarios con roles que no existen o roles sin usuarios asociados.
 
-### PASO 4 - JOIN
+### PASO 4 - JOIN
 
 Haz un `JOIN` que saque usuarios.id_usuario, usuarios.nombre, usuarios.apellido, usuarios.email, usuarios.edad, roles.nombre_rol de las dos tablas
 
 ## Relación tipo 1:N (Uno a varios)
 
-### PASO 1 - Crea una tabla `categorias` con:
+### PASO 1 - Crea una tabla `categorias` con:
 
 - id_categoria: tipo número, que sea una clave primaria e incremente su número.
 - nombre_categoría: tipo texto y no puede dejarse el campo vacío. Máximo 100 caracteres.
@@ -118,11 +118,11 @@ INSERT INTO categorias (nombre_categoria) VALUES
 ('Automotriz'),
 ('Música y Películas');
 ```
-### PASO 2 - Añade a la tabla `usuarios` la columna `id_categoria`
+### PASO 2 - Añade a la tabla `usuarios` la columna `id_categoria`
 La columna debe ser tipo número
 
 
-### PASO 3 - Añade categorías a varios usuarios
+### PASO 3 - Añade categorías a varios usuarios
 Podría ser algo así:
 ```SQL
 -- Asignar categorías a usuarios específicos
@@ -135,7 +135,7 @@ Haz un `JOIN` que saque usuarios.id_usuario, usuarios.nombre, usuarios.apellido,
 
 ## Relación tipo N:M (muchos a muchos)
 
-### PASO 1 - Crea una tabla intermedia llamada `usuarios_categorias` con:
+### PASO 1 - Crea una tabla intermedia llamada `usuarios_categorias` con:
 
 - id_usuario_categoria: tipo número, que sea una clave primaria e incremente su número.
 - id_usuario: tipo número.
